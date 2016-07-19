@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>OpenHCM Web Viewer</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/hlc-icon.ico">
+	<link href="lib/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+	<link href="lib/jstree-themes/default-dark/style.min.css" rel="stylesheet">
+	<link href="lib/dropzone.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<!-- UI -->
+	<script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="lib/jstree.min.js"></script>
+	<script type="text/javascript" src="lib/dropzone.min.js"></script>
+	<script type="text/javascript" src="lib/spin.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.spin.js"></script>
+	<!-- 3D -->
+	<script type="text/javascript" src="lib/three.js"></script>
+	<!-- Input controls -->
+	<script type="text/javascript" src="lib/OrbitControls.js"></script>
+	<script type="text/javascript" src="lib/TrackballControls.js"></script>
+	<!-- Axis display -->
+	<script type="text/javascript" src="lib/AxisHelper.js"></script>
+	<!-- Polygon triangulation -->
+	<script type="text/javascript" src="lib/earcut.js"></script>
+  </head>
+
+  <body>
+<!--	<button type="button" onClick="document.getElementById('options').innerHTML = 'Options'">
+	  "Show options"
+	</button> -->
+
+	<div id="view3d">
+	  <div id="maintitle" class="title"><h1>OpenHCM Web Viewer</h1></div>
+	  <div id="componentTree"></div>
+	  <div id="overlay"></div>
+
+	  <!-- HCM loading -->
+	  <script type="text/javascript" src="HCMMesh.js"></script>
+	  <script type="text/javascript" src="ShipStructure.js"></script>
+	  <script type="text/javascript" src="Ship.js"></script>
+	  <script type="text/javascript" src="HCMLoader.js"></script>
+	  <!-- 3D view -->
+	  <script type="text/javascript" src="view.js"></script>
+
+	  <!-- Drop zone for file upload -->
+	  <div id="dropzone">
+		<form action="loadFile" class="dropzone" id="file-upload-zone">
+		  <div class="dz-message">
+			Drop HCM<br/>file here
+		  </div>
+		</form>
+	  </div>
+
+	  <div id="options">
+		<div id="option-title">
+		  <h3 class="title">Options</h3>
+		</div>
+
+		<div id="option-list">
+		  <ul>
+			<li class="option"><a href="#options-view">Visibility</a></li>
+			<li class="option"><a href="#options-perf">Performance</a></li>
+		  </ul>
+
+		  <div id="options-view">
+			<input type="checkbox" class="option" id="showAxes"><label class="option" for="showAxes">Axes</label>
+			<input type="checkbox" class="option" id="showMesh"><label class="option" for="showMesh">Triangle Mesh</label>
+		  </div>
+		  <div id="options-perf">
+			<input type="checkbox" checked="checked" class="option" id="hasLighting"><label class="option" for="hasLighting">Lighting</label><br />
+			<input type="checkbox" checked="checked" class="option" id="hasAO"><label class="option" for="hasAO">Ambient Occlusion</label><br />
+			<input type="checkbox" checked="checked" class="option" id="hasAntialiasing"><label class="option" for="hasAntialiasing">Anti-Aliasing</label><br />
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+	<!-- UI -->
+	<script>
+	  $("#option-title").click(function() {
+		$("#option-list").toggle("fold");
+	  });
+
+	  $(function() {
+		$("#option-list").tabs({
+		  collapsible: true,
+		  active: false
+		}).addClass("ui-tabs-vertical ui-helper-clearfix").toggle("fold");
+	  });
+
+
+	  $(function() {
+		$("#hasLighting").button();
+	  });
+
+	  $(function() {
+		$("#hasLighting").click(function()
+		{
+			toggleLighting();
+		});
+	  });
+
+
+	  $(function() {
+		$("#hasAO").button();
+	  });
+
+	  $(function() {
+		$("#hasAO").click(function()
+		{
+			toggleAO();
+		});
+	  });
+
+
+	  $(function() {
+		$("#hasAntialiasing").button();
+	  });
+
+	  $(function() {
+		$("#hasAntialiasing").click(function()
+		{
+			toggleAntialiasing();
+		});
+	  });
+
+
+	  $(function() {
+		$("#showMesh").button();
+	  });
+
+	  $(function() {
+		$("#showMesh").click(function()
+		{
+			toggleTriangleMeshVisibility();
+		});
+	  });
+
+
+	  $(function() {
+		$("#showAxes").button();
+	  });
+
+	  $(function() {
+		$("#showAxes").click(function()
+		{
+			toggleAxesVisibility();
+		});
+	  });
+
+	  $(function() {
+		$("#componentTree").jstree({
+			"core" : {
+				"animation" : 0,
+				"themes" : { "stripes" : false },
+				/*"data" : function (node) {
+					return { "id" : node.id };
+				}*/
+			},
+			"plugins" : [
+				"contextmenu", "dnd", "search",
+				"state", "types", "wholerow"
+			]
+		});
+	  });
+	</script>
+
+  </body>
+</html>

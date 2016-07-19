@@ -1,0 +1,163 @@
+body
+{
+	margin: 0px;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+.title
+{
+	text-align: center;
+	text-shadow: 1px 1px #000000;
+	color: #e1d4b2;
+	opacity: 0.8;
+	margin: 2px;
+}
+
+#maintitle
+{
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 5px;
+}
+
+#options
+{
+	background-image: none;
+	background-color: #CCC;
+	position: absolute;
+	float: right;
+	background-color: transparent;
+	background-image: none;
+	right: 0px;
+	top: 0px;
+	border: 1px;
+	z-index: 999;
+}
+
+#option-title
+{
+	text-align: right;
+	padding: 10px;
+}
+
+#option-title h3
+{
+	text-align: right;
+	cursor: pointer;
+}
+
+#option-list
+{
+	max-width: 10em;
+}
+
+.option
+{
+	width: 100%;
+	text-align: center;
+}
+
+#button
+{
+	position: fixed;
+	z-index: 999;
+}
+
+#overlay
+{
+	 width: 200px;
+	height: 200px;
+	background-color: transparent; /* will show through only if renderer alpha: true */
+	border: none; /* 1px solid black; */
+	margin: 20px;
+	padding: 0px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+}
+
+#componentTree
+{
+	background-color: transparent;
+	font-family: "Helvetica", Helvetica, sans-serif;
+	color : #e1d4b2;
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	z-index: 100;
+}
+
+#componentTree .jstree-node
+{
+	background-color: rgba(0, 0, 0, 0.2); /* transparent */
+}
+
+#view3d
+{
+	width: 1024px;
+	height: 768px;
+}
+
+.dropzone
+{
+	background-color: rgba(255, 255, 255, 0.2); /* partially transparent */
+	color: #dddddd;
+	text-shadow: 1px 1px #000000;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	right: 5px;
+	bottom: 5px;
+	margin: auto;
+	padding: 0px 0px;
+	z-index: 100;
+}
+
+.ui-tabs.ui-tabs-vertical {
+	padding: 0;
+}
+.ui-tabs.ui-tabs-vertical .ui-widget-header {
+	border: none;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+	float: right;
+	width: 10em;
+	background: #CCC;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
+	clear: left;
+	width: 100%;
+	margin: 0.2em 0;
+	border: 1px solid grey;
+	overflow: hidden;
+	position: relative;
+	right: -2px;
+	z-index: 2;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
+	display: block;
+	width: 100%;
+	padding: 0.6em 5px;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
+	cursor: pointer;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: 0.2em;
+	padding-bottom: 0;
+	border-right: 1px solid white;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
+	margin-bottom: 10px;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+	float: right;
+	border: none;
+	position: relative;
+	left: -1px;
+	padding: 2px;
+	background: #CCC;
+}
