@@ -18,7 +18,7 @@ The OpenHCM Web Viewer was developed by [Bureau Veritas](http://www.bureauverita
 
 Privacy
 -------
-The viewer does not use store any of your data. Specifically, the HCM files are never uploaded to the server.
+The viewer does not store any of your data. Specifically, the HCM files you open with it are never uploaded to the server.
 
 
 Technology
