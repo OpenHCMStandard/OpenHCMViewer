@@ -10,7 +10,7 @@ OpenHCM is an industry-driven XML-based file format to store ship structure and 
 
 The Viewer
 ----------
-The OpenHCM Web Viewer was developed by [Bureau Veritas](http://www.bureauveritas.com) in order to promote the format and demonstrate its features. It is now released under the Apache License 2.0 in order to encourage its use and evolution, as well as offer a sample implementation for future OpenHCM-supporting software.
+The OpenHCM Web Viewer was developed by [Bureau Veritas](http://www.bureauveritas.com) in order to promote the format and demonstrate its features. It is now released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) in order to encourage its use and evolution, as well as offer a sample implementation for future OpenHCM-supporting software.
 
 
 Technology
