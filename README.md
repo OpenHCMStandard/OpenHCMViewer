@@ -14,7 +14,7 @@ For more information on the format, please consult the [OpenHCM 2.0 schema](http
 The Viewer
 ----------
 The OpenHCM Web Viewer was developed by [Bureau Veritas](http://www.bureauveritas.com) in order to promote the format and demonstrate its features. It is now released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) in order to encourage its use and evolution, as well as offer a sample implementation for future OpenHCM-supporting software.
-> Link to the Viewer is [here](https://openhcmstandard.github.io/OpenHCMViewer/)
+> Link to the Viewer is [here](https://openhcmstandard.github.io/OpenHCMViewer/).
 
 
 Privacy
